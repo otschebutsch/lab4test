@@ -26,12 +26,12 @@ namespace Lab4
         [Fact]
         public void AddVariousCreds()
         {
-            Assert.False(authDatabaseUtils.AddCredentials("ґєїёэ", PasswordHasher.GetHash("ґєїёэ")));
-            Assert.False(authDatabaseUtils.AddCredentials("123", PasswordHasher.GetHash("123")));
-            Assert.False(authDatabaseUtils.AddCredentials("畝俱樂部迷", PasswordHasher.GetHash("畝俱樂部迷")));
-            Assert.False(authDatabaseUtils.AddCredentials(".,<>?#~![]{}", PasswordHasher.GetHash(".,<>?#~![]{}")));
-            Assert.False(authDatabaseUtils.AddCredentials("✔️✔️✔️", PasswordHasher.GetHash("✔️✔️✔️")));
-            Assert.False(authDatabaseUtils.AddCredentials("usermeme", PasswordHasher.GetHash("P A S S W O R D")));
+            Assert.True(authDatabaseUtils.AddCredentials("ґєїёэ", PasswordHasher.GetHash("ґєїёэ")));
+            Assert.True(authDatabaseUtils.AddCredentials("123", PasswordHasher.GetHash("123")));
+            Assert.True(authDatabaseUtils.AddCredentials("畝俱樂部迷", PasswordHasher.GetHash("畝俱樂部迷")));
+            Assert.True(authDatabaseUtils.AddCredentials(".,<>?#~![]{}", PasswordHasher.GetHash(".,<>?#~![]{}")));
+            Assert.True(authDatabaseUtils.AddCredentials("✔️✔️✔️", PasswordHasher.GetHash("✔️✔️✔️")));
+            Assert.True(authDatabaseUtils.AddCredentials("usermeme", PasswordHasher.GetHash("P A S S W O R D")));
         }
 
 
@@ -47,12 +47,12 @@ namespace Lab4
         [Fact]
         public void AddSameLoginCreds()
         {
-            Assert.True(authDatabaseUtils.AddCredentials("ґєїёэ", PasswordHasher.GetHash("ґєїёэ")));
-            Assert.True(authDatabaseUtils.AddCredentials("123", PasswordHasher.GetHash("123")));
-            Assert.True(authDatabaseUtils.AddCredentials("畝俱樂部迷", PasswordHasher.GetHash("畝俱樂部迷")));
-            Assert.True(authDatabaseUtils.AddCredentials(".,<>?#~![]{}", PasswordHasher.GetHash(".,<>?#~![]{}")));
-            Assert.True(authDatabaseUtils.AddCredentials("✔️✔️✔️", PasswordHasher.GetHash("✔️✔️✔️")));
-            Assert.True(authDatabaseUtils.AddCredentials("usermeme", PasswordHasher.GetHash("P A S S W O R D")));
+            Assert.False(authDatabaseUtils.AddCredentials("ґєїёэ", PasswordHasher.GetHash("ґєїёэ")));
+            Assert.False(authDatabaseUtils.AddCredentials("123", PasswordHasher.GetHash("123")));
+            Assert.False(authDatabaseUtils.AddCredentials("畝俱樂部迷", PasswordHasher.GetHash("畝俱樂部迷")));
+            Assert.False(authDatabaseUtils.AddCredentials(".,<>?#~![]{}", PasswordHasher.GetHash(".,<>?#~![]{}")));
+            Assert.False(authDatabaseUtils.AddCredentials("✔️✔️✔️", PasswordHasher.GetHash("✔️✔️✔️")));
+            Assert.False(authDatabaseUtils.AddCredentials("usermeme", PasswordHasher.GetHash("P A S S W O R D")));
         }
   
 
