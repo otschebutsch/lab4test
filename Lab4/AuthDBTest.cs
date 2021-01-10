@@ -43,16 +43,13 @@ namespace Lab4
             Assert.True(authDatabaseUtils.AddCredentials(login, password));
         }
 
-
         [Fact]
         public void AddSameLoginCreds()
         {
-            Assert.False(authDatabaseUtils.AddCredentials("ґєїёэ", PasswordHasher.GetHash("ґєїёэ")));
-            Assert.False(authDatabaseUtils.AddCredentials("123", PasswordHasher.GetHash("123")));
-            Assert.False(authDatabaseUtils.AddCredentials("畝俱樂部迷", PasswordHasher.GetHash("畝俱樂部迷")));
-            Assert.False(authDatabaseUtils.AddCredentials(".,<>?#~![]{}", PasswordHasher.GetHash(".,<>?#~![]{}")));
-            Assert.False(authDatabaseUtils.AddCredentials("✔️✔️✔️", PasswordHasher.GetHash("✔️✔️✔️")));
-            Assert.False(authDatabaseUtils.AddCredentials("usermeme", PasswordHasher.GetHash("P A S S W O R D")));
+            string login = "newlogin";
+            string password = PasswordHasher.GetHash("password");
+            Assert.True(authDatabaseUtils.AddCredentials(login, password));
+            Assert.False(authDatabaseUtils.AddCredentials(login, password));
         }
   
 
@@ -103,7 +100,9 @@ namespace Lab4
         public void UpdateSameCreds()
         {
             authDatabaseUtils.AddCredentials("userzhb", PasswordHasher.GetHash("passworddd"));
+            authDatabaseUtils.AddCredentials("userzhb2", PasswordHasher.GetHash("password"));
             Assert.True(authDatabaseUtils.UpdateCredentials("userzhb", PasswordHasher.GetHash("passworddd"), "userzhb", PasswordHasher.GetHash("passworddd")));
+            Assert.False(authDatabaseUtils.UpdateCredentials("userzhb", PasswordHasher.GetHash("passwordd"), "userzhb2", PasswordHasher.GetHash("somepassword")));
         }
 
 
